@@ -1,27 +1,11 @@
 .message
   .upper-message
     .upper-message__user-name
-      メンバー
+      = message.user.name
     .upper-message__date
-      2018/7/19
+      = format_posted_time(message.created_at)
   .lower-meesage
-    .lower-message__content
-      メッセージ
-.message
-  .upper-message
-    .upper-message__user-name
-      メンバー
-    .upper-message__date
-      2018/7/19
-  .lower-meesage
-    .lower-message__content
-      メッセージ
-.message
-  .upper-message
-    .upper-message__user-name
-      メンバー
-    .upper-message__date
-      2018/7/19
-  .lower-meesage
-    .lower-message__content
-      メッセージ
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
