@@ -22,7 +22,7 @@ $(function() {
   }
 
   function scroll() {
-  $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'slow');
+    $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'slow');
   };
 
   $('#new_message').on('submit', function(e) {
@@ -38,7 +38,6 @@ $(function() {
       contentType: false
     })
     .done(function(message) {
-      console.log(message);
       var html = buildHTML(message);
       $('.messages').append(html);
       $('#new_message')[0].reset();
