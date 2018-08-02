@@ -3,9 +3,9 @@
     .upper-message__user-name
       = message.user.name
     .upper-message__date
-      = format_posted_time(message.created_at)
-  .lower-meesage
-    - if message.content.present?
-      %p.lower-message__content
-        = message.content
-    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+      = message.created_at.to_s(:datetime)
+  .lower-message
+    .lower-message__content
+      = message.content if message.content.present?
+    .lower-message__image
+      = image_tag message.image.url if message.image.present?
