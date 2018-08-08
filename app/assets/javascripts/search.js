@@ -40,12 +40,12 @@ $(document).on('turbolinks:load', function(){
       })
       .done(function(users){
         $('#user-search-result').empty(); //要素内の子要素(テキストも対象)を全て削除
-        if (users.length !== 0 && input.length !==0) {
+        if (users.length !== 0 ) {
           users.forEach(function(user){
             appendUser(user);
           });
         }
-        else if (input.length !==0) {
+        else if {
           appendNoUser('該当するユーザーがいません');
         }
       })
