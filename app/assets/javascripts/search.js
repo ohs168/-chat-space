@@ -54,14 +54,14 @@ $(document).on('turbolinks:load', function(){
       })
     });
 
-    $(document).on('click', '.user-search-add', function(){
+    $('#user-search-result').on('click', '.chat-group-user__btn--add', function(){
       var userName = $(this).data('user-name');
       var userId = $(this).data('user-id');
       appendToMember(userName, userId);
       $(this).parent().remove();
     });
 
-    $(document).on('click', '.user-search-remove', function(){
+    $('#chat-group-users').on('click', '.js-remove-btn', function(){
       $(this).parent().remove();
     });
   });
