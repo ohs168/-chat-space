@@ -23,9 +23,9 @@ $(document).on('turbolinks:load', function(){
     function appendToMember(userName, userId) { //検索結果からチャットメンバーに追加する関数
       var html =
       `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${ userId }'>
-       <input name='group[user_ids][]' type='hidden' value='${ userId }'>
-       <p class='chat-group-user__name'>${ userName }</p>
-       <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+         <input name='group[user_ids][]' type='hidden' value='${ userId }'>
+         <p class='chat-group-user__name'>${ userName }</p>
+         <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
       </div>`
       addedUsers.append(html)
     }
