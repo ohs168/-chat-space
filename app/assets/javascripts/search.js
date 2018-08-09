@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
       var input = $.trim($(this).val()); //文字列の両端の空白を削除
       $.ajax({
         type: 'GET',
-        url: '/users/search',
+        url: '/users',
         data: { keyword: input },
         dataType: 'json',
       })
@@ -45,7 +45,7 @@ $(document).on('turbolinks:load', function(){
             appendUser(user);
           });
         }
-        else if {
+        else {
           appendNoUser('該当するユーザーがいません');
         }
       })
