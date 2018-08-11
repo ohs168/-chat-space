@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
     $(window).on('load', function() {
       if(document.URL.match(/\/groups\/\d+\/messages/)) {
         setInterval(function() {
-          var last_message_id = $('.message:last').data('id')||0;
+          var last_message_id = $('.message:last').data('id')||0 ;
             $.ajax({
               url: url,
               type: 'GET',
