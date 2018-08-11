@@ -52,14 +52,15 @@ $(document).on('turbolinks:load', function(){
     $(window).on('load', function() {
       if(document.URL.match(/\/groups\/\d+\/messages/)) {
         setInterval(function() {
-          var last_message_id = $('.message:last').data('id')||0 ;
+          var last_message_id = $('.message:last').data('id') || 0;
             $.ajax({
-              url: url,
+              url: document.URL,
               type: 'GET',
               dataType: 'json',
-              data: {'id': last_message_id}
+              data: {'id': last_message_id }
             })
             .done(function(data) {
+              var html = "";
               data.forEach(function(message) {
                 var html = buildHTML(message);
                 $('.messages').append(html);
