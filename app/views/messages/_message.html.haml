@@ -1,11 +1,11 @@
-.message
+.message{ 'data-id': message.id }
   .upper-message
     .upper-message__user-name
       = message.user.name
     .upper-message__date
       = message.created_at.to_s(:datetime)
   .lower-message
-    .lower-message__content
-      = message.content if message.content.present?
-    .lower-message__image
-      = image_tag message.image.url if message.image.present?
+    - if message.content.present?
+      .lower-message__content
+        = message.content
+      = image_tag message.image.url, class: 'message__image' if message.image.present?
