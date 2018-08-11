@@ -41,25 +41,23 @@ $(document).on('turbolinks:load', function(){
         var html = buildHTML(message);
         $('.messages').append(html);
         $('#new_message')[0].reset();
+        $('.form__submit').prop("disabled",false);
         scroll();
       })
       .fail(function(){
         alert('メッセージを入力してください');
       });
-      return false;
     });
 
     $(window).on('load', function() {
-      if(document.URL.match('messages')) {
+      if(document.URL.match(/\/groups\/\d+\/messages/)) {
         setInterval(function() {
-          var url = $('#new_message').attr('action');
-          var message_id = $('.message:last').data('id');
-          if (message_id) {
+          var last_message_id = $('.message:last').data('id')||0;
             $.ajax({
               url: url,
               type: 'GET',
               dataType: 'json',
-              data: {'id': message_id}
+              data: {'id': last_message_id}
             })
             .done(function(data) {
               data.forEach(function(message) {
@@ -71,7 +69,6 @@ $(document).on('turbolinks:load', function(){
             .fail(function(data) {
               alert('通信に失敗しました。')
             })
-          }
         }, 5000);
       }
     });
