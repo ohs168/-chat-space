@@ -1,4 +1,4 @@
-json.array! @new_messages do |message|
+json.array! @messages do |message|
   json.id  message.id
   json.content  message.content
   json.user_name  message.user.name
