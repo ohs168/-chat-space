@@ -5,4 +5,3 @@ json.array! @new_messages.each do |message|
   json.created_at  message.created_at.to_s(:datetime)
   json.image  message.image.url
 end
-
