@@ -1,3 +1,7 @@
+group :production do
+  gem 'unicorn'
+end
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -61,3 +65,4 @@ gem 'devise'
 gem 'erb2haml'
 gem 'carrierwave'
 gem 'mini_magick'
+
