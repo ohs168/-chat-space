@@ -1,7 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0
-
-set :linked_files, %w{ config/secrets.yml }
+lock "~> 3.11.0"
 
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
@@ -9,6 +7,8 @@ set :default_env, {
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
 }
+
+set :linked_files, %w{ config/secrets.yml }
 
 set :application, "chat-space"
 set :repo_url, "git@github.com:ohs168/chat-space.git"
