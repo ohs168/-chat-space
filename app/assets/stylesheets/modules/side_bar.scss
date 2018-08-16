@@ -11,7 +11,9 @@
     padding: 0 20px;
     border-bottom: 1px solid $white;
     &__name {
-      float: left;
+      position: relative;
+      top: 40px:
+      left: 50px:
       display: inline-block;
       font-size: $side_header_font;
       font-weight: bold;
